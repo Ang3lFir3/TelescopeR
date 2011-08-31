@@ -11,8 +11,8 @@ end
 def user_repos(user)
 	result = HTTParty.get('https://api.github.com/users/' + user + '/repos')
 	result.each do |x|
-		puts x["ssh_url"] 
-		puts x["clone_url"]
+		puts "ssh: " + x["ssh_url"] 
+		puts "clone: " + x["clone_url"]
 		puts '----------------------------------------------------'
 	end
 end
