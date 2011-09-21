@@ -20,7 +20,7 @@ def pretty_print_results(uri, fields)
 	result = HTTParty.get(uri)
 	result.each do |x|
 		fields.each do |y|
-			puts y[0].to_s + x[y[1]].to_s
+			puts y[0].to_s + ": " + x[y[1]].to_s
 		end
 		puts '----------------------------------------------------'
 	end
