@@ -17,9 +17,7 @@ def user_repos(user)
 	end
 end
 
-case ARGV[0]
-when "repos" then repos ARGV[1]
-when "user_repos" then user_repos ARGV[1]
-else puts "you can't just ask a genie to be awesome"
-end
+fn = {:repos => repos(ARGV[1]), :user_repos => user_repos(ARGV[1]) }
+
+fn[ARGV[0]]
 
