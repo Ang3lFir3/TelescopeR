@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'Httparty'
 
+@base_url_v3 = 'https://api.github.com/users/'
+
 def repos(repo)
 	result = HTTParty.get('http://github.com/api/v2/json/repos/search/' + repo)
 	result["repositories"].each do |x|
@@ -9,11 +11,11 @@ def repos(repo)
 end
 
 def user_repos(repoUser)
-	pretty_print_results('https://api.github.com/users/' + repoUser + '/repos', {:ssh => "ssh_url", :clone => "clone_url"})
+	pretty_print_results( @base_url_v3 + repoUser + '/repos', {:ssh => "ssh_url", :clone => "clone_url"})
 end
 
 def user_gists(gistUser)
-	pretty_print_results('https://api.github.com/users/' + gistUser + '/gists', {:description => "description", :pull_url => "git_pull_url"})
+	pretty_print_results( @base_url_v3 + gistUser + '/gists', {:description => "description", :pull_url => "git_pull_url"})
 end
 
 def pretty_print_results(uri, fields)
