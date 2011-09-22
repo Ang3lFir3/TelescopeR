@@ -26,7 +26,5 @@ def pretty_print_results(uri, fields)
 	end
 end
 
-fn = {:repos => repos(ARGV[1]), :urepos => user_repos(ARGV[1]), :ugists => user_gists(ARGV[1])}
-
-fn[ARGV[0]]
+method(ARGV[0]).call(ARGV[1])
 
