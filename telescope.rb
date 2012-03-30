@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'Httparty'
+require 'httparty'
 
 @base_url_v3 = 'https://api.github.com/users/'
 @base_url_v2 = 'http://github.com/api/v2/json/repos/'
